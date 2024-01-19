@@ -1,0 +1,37 @@
+Lab1
+
+ให้สร้าง Project ใหม่ขึ้นมาตั้งชื่ออะไรก็ได้ (npm init)
+=> npm init จะได้ไฟล์ package.json
+สร้าง ไฟล์ index.js และให้ console.log ชื่อตัวเองออกมา
+=> ในไฟล์ index.js ใช้คำสั่ง
+    console.log("..name..")
+สร้าง sciprt ใน package.json เพื่อรัน node index.js โดยให้สามารถใช้ script npm run dev
+=> ใช้คำสั่ง 
+    "dev" : "node index.js" หรือ "dev" : "nodemon index.js"
+เปลี่ยน script เพื่อให้สามารถรัน npm start
+=> ใช้คำสั่ง
+    "start" : "node index.js" หรือ "start" : "nodemon index.js"
+
+Lab2
+
+ให้ใช้คำสั่งเพื่อเริ่มใช้งาน package.json
+=> npm init
+ให้ install axios และ querystring
+=> npm i axios querystring
+ให้ uninstall querystring
+=> npm uninstall querystring
+ให้ install nodemon แบบ dev dependency
+=> npm i -D nodemon
+สร้างไฟล์ index.js และเรียกใช้งานโดย nodemon
+=> nodemon index.js
+ให้ uninstall dev dependency ทั้งหมด
+=> npm uninstall -D ..name..
+
+Lab3
+
+ให้ uninstall nodemon แบบ global
+=> ใช้คำสั่ง npm uninstall -g nodemon
+จาก Lab ที่แล้วให้ลองใช้คำสั่ง npx nodemon index.js
+=> npx nodemon index.js จะสามารถใช้ได้และรัน index.js ได้(ถ้าไม่ได้ลง nodemon)
+ให้ install nodemon แบบ global
+=> ใช้คำสั่ง npm i -g nodemon
