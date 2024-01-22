@@ -84,12 +84,15 @@ const productRoute = require("./routes/product-route");
 const errorHandler = require("./middlewares/error");
 const notFoundHandler = require("./middlewares/not-found");
 const cors = require("cors");
+const authRoute = require("./routes/auth.route");
 
-app.use(cors());
 const app = express();
 
+app.use(cors());
+app.use(express.json());
+
 app.use("/product", productRoute);
-app.use(express().json);
+app.use("/auth", authRoute);
 
 app.use(errorHandler);
 app.use("*", notFoundHandler);
