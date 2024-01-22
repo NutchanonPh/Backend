@@ -29,7 +29,7 @@
 // const multer = require("multer");
 // const fs = require("fs");
 
-// const upload = multer({dest: 'uploads/'})
+//const upload = multer({dest: 'uploads/'})
 // const app = express();
 
 // app.use(express.json());
@@ -77,11 +77,22 @@
 //     const {id} = req.params;
 //     res.json({id});
 // });
+
+//errorMiddleware
 const express = require("express");
 const productRoute = require("./routes/product-route");
+const errorHandler = require("./middlewares/error");
+const notFoundHandler = require("./middlewares/not-found");
+const cors = require("cors");
+
+app.use(cors());
 const app = express();
 
 app.use("/product", productRoute);
+app.use(express().json);
+
+app.use(errorHandler);
+app.use("*", notFoundHandler);
 
 app.listen("8000", ()=> {
     console.log("Server is running on port 8000");
