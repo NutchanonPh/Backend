@@ -77,6 +77,10 @@
 //     const {id} = req.params;
 //     res.json({id});
 // });
+const express = require("express");
+const productRoute = require("./routes/product-route");
+const app = express();
+
 app.use("/product", productRoute);
 
 app.listen("8000", ()=> {
