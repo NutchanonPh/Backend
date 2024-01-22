@@ -52,31 +52,32 @@
 // });
 
 // Lab 1
-const express = require("express");
-const app = express();
+// const express = require("express");
+// const app = express();
 
-app.use(express.json());
+// app.use(express.json());
 
-app.get("/product", (req, res, next)=>{
-    const {page, limit, order} = req.query;
-    res.json({page, limit, order});
-});
+// app.get("/product", (req, res, next)=>{
+//     const {page, limit, order} = req.query;
+//     res.json({page, limit, order});
+// });
 
-app.post("/product", (req, res, next)=> {
-    const {name, price, description} = req.body;
-    res.json({name, price, description});
-});
+// app.post("/product", (req, res, next)=> {
+//     const {name, price, description} = req.body;
+//     res.json({name, price, description});
+// });
 
-app.put("/product/:id", (req, res, next)=> {
-    const {name, price, description} = req.body;
-    const {id} = req.params;
-    res.json({name, price, descriptionm, id});
-});
+// app.put("/product/:id", (req, res, next)=> {
+//     const {name, price, description} = req.body;
+//     const {id} = req.params;
+//     res.json({name, price, descriptionm, id});
+// });
 
-app.delete("/product/:id", (req, res, next)=> {
-    const {id} = req.params;
-    res.json({id});
-});
+// app.delete("/product/:id", (req, res, next)=> {
+//     const {id} = req.params;
+//     res.json({id});
+// });
+app.use("/product", productRoute);
 
 app.listen("8000", ()=> {
     console.log("Server is running on port 8000");
