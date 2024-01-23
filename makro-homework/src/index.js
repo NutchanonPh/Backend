@@ -4,11 +4,16 @@ const cors = require("cors");
 
 const errorHandler = require("./middlewares/error");
 const notFounbdHandler = require("./middlewares/notFound");
+const createError = require('./utils/createError');
+
+const authRoute = require("./routes/auth-route");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use("/auth", authRoute);
 
 app.use(errorHandler);
 app.use("*", notFounbdHandler);
