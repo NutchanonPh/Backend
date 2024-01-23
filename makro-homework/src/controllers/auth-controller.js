@@ -5,19 +5,28 @@ exports.register = (req, res, next)=> {
 };
 
 exports.login = (req, res, next)=> {
-    res.json({message: "Login"});
+    const {email, password} = req.body;
+    res.json({email, password});
 };
 
 exports.forgetPassword = (req, res, next)=> {
     const {email} = req.body;
-    //Gen Token => Create Link => Send to Email
-    res.json({message: "Forget Password"});
+    // Gen Token => Create Link => Send to Email
+    res.json({email});
 };
 
 exports.verifyForgetPassword = (req, res, next)=> {
-    res.json({message: "Verify Forget Password"});
+    const {token} = req.params;
+    // Logic check token
+    // Redirect reset password
+    res.json({token});
 };
 
 exports.resetPassword = (req, res, next)=> {
-    res.json({message: "Reset Password"});
+    const{token} = req.params;
+    const{password} = req.body;
+    // Check Token
+    // Change new password
+    // Storage new password to DB
+    res.json({token, password});
 };
